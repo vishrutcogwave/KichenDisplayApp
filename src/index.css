@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bark Blink style */
+@keyframes blink-yellow {
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #fef08a; /* yellow-200 */
+  }
+}
+
+.blink-yellow {
+  animation: blink-yellow 0.8s ease-in-out infinite;
+}
+
+@keyframes fast-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-fast-pulse {
+  animation: fast-pulse 0.6s ease-in-out infinite;
+}
