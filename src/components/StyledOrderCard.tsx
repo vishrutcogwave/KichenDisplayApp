@@ -19,13 +19,9 @@ export default function StyledOrderCard({ label, onClick, ready }: Props) {
       `}
     >
       {/* Label */}
-      {/* <span className="text-2xl font-semibold uppercase tracking-wider">
+      <span className=" text-lg font-semibold  tracking-wider">
         {label}
-      </span> */}
-      <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold uppercase tracking-wider">
-  {label}
-</span>
-
+      </span>
 
       {/* Status Badge */}
       <div className="mt-3 flex items-center gap-2 px-3 py-1 rounded-full text-sm font-semibold">
