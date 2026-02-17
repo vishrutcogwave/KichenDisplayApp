@@ -99,36 +99,40 @@ function KitchenDisplay() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gray-50">
-      <Header
-        title="KITCHEN DISPLAY"
-        subtitle="Live orders in progress"
-        icon={<CookingPot className="w-full h-full" />}
-      />
+  <div className="min-h-screen w-full bg-gray-50 flex flex-col">
+  {/* Fixed Header */}
+  <div className="sticky top-0 z-50 bg-gray-50">
+    <Header
+      title="KITCHEN DISPLAY"
+      subtitle="Live orders in progress"
+      icon={<CookingPot className="w-full h-full" />}
+    />
+  </div>
 
-      {/* Orders Board */}
-      <div className="p-6">
-        <NewOrdersBoard
-          data={ordersData
-            .filter((item) => item.Picked === "0") // if you only want unpicked orders
-            .sort((a, b) => {
-              const kotDiff = Number(a.KotNo) - Number(b.KotNo);
-              if (kotDiff !== 0) return kotDiff;
-              return a.Priority - b.Priority; // secondary sort by priority
-            })}
-          onSelectOrder={handleSelectOrder}
-        />
-      </div>
+  {/* Orders Board */}
+  <div className="p-6 flex-1 overflow-auto">
+    <NewOrdersBoard
+      data={ordersData
+        .filter((item) => item.Picked === "0") // only unpicked orders
+        .sort((a, b) => {
+          const kotDiff = Number(a.KotNo) - Number(b.KotNo);
+          if (kotDiff !== 0) return kotDiff;
+          return a.Priority - b.Priority;
+        })}
+      onSelectOrder={handleSelectOrder}
+    />
+  </div>
 
-      {/* Order Details Modal */}
-      <OrderDetailsModal
-        open={open}
-        orderNo={orderTitle}
-        items={selectedItems}
-        onClose={() => setOpen(false)}
-        onRefresh={fetchOrders} // manual refresh from modal
-      />
-    </div>
+  {/* Order Details Modal */}
+  <OrderDetailsModal
+    open={open}
+    orderNo={orderTitle}
+    items={selectedItems}
+    onClose={() => setOpen(false)}
+    onRefresh={fetchOrders}
+  />
+</div>
+
   );
 }
 

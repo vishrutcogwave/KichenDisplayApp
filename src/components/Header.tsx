@@ -1,6 +1,6 @@
 
 import { useEffect, useState, type ReactNode } from "react";
-import { Settings, ChevronDown } from "lucide-react";
+import { Settings} from "lucide-react";
 import { useOrdersRefresh } from "../context/OrdersRefreshContext";
 
 type Outlet = {
@@ -113,13 +113,13 @@ export default function Header({ title, subtitle, icon }: HeaderClockProps) {
           <div className="flex items-center gap-2 mt-2">
             {/* Dropdown */}
             <div className="relative">
-              <button
+              {/* <button
                 onClick={() => setOpen(!open)}
                 className="flex items-center gap-1 text-sm font-semibold text-white bg-gray-800 px-3 py-1.5 rounded-md hover:bg-gray-700"
               >
                 {selectedOutlet.name}
                 <ChevronDown size={16} />
-              </button>
+              </button> */}
 
               {open && (
                 <div className="absolute right-0 mt-2 w-64 rounded-md bg-white shadow-lg z-50">
