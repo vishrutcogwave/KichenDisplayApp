@@ -64,7 +64,7 @@ function KitchenDisplay() {
 
     const filtered = ordersData.filter((item) =>
       type === "FFS"
-        ? item.Res === "FFS" && item.KotNo === value
+        ? item.Res === "FFS" && item.Tbl === value
         : item.Res === "FAS" && item.Tbl === value,
     );
 
@@ -82,7 +82,7 @@ function KitchenDisplay() {
 
     if (type === "FFS") {
       filtered = ordersData.filter(
-        (item) => item.Res === "FFS" && item.KotNo === value,
+        (item) => item.Res === "FFS" && item.Tbl === value,
       );
       setOrderTitle(`Order ${value}`);
     }

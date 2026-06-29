@@ -26,10 +26,10 @@ export default function NewOrdersBoard({ data, onSelectOrder }: Props) {
 
   filteredData.forEach((item) => {
     if (item.Res === "FFS") {
-      map.set(`FFS-${item.KotNo}`, {
+      map.set(`FFS-${item.Tbl}`, {
         type: "FFS",
-        value: item.KotNo,
-        label: `OrderNo ${item.KotNo}`,
+        value: item.Tbl,
+        label: `OrderNo ${item.Tbl}`,
       });
     }
 

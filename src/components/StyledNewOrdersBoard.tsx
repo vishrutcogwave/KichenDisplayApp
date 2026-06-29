@@ -26,14 +26,14 @@ export default function StyledNewOrdersBoard({ data, onSelectOrder }: Props) {
   data.forEach((item) => {
     if (item.Picked === "0") {
       if (item.Res === "FFS") {
-        const key = `FFS-${item.KotNo}`;
+        const key = `FFS-${item.Tbl}`;
         const existing = groupedMap.get(key);
         if (existing) {
           existing.items.push(item);
         } else {
           groupedMap.set(key, {
             type: "FFS",
-            value: item.KotNo,
+            value: item.Tbl,
             items: [item],
           });
         }

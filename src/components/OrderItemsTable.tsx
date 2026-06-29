@@ -124,7 +124,7 @@ export default function KotOrdersTable({ items, onRefresh }: Props) {
 
       if (item.Res === "FFS") {
         const utterance = new SpeechSynthesisUtterance(
-          `Order number ${item.KotNo} is ready`,
+          `Order number ${item.Tbl} is ready`,
         );
         utterance.lang = "en-IN";
         utterance.rate = 0.9;

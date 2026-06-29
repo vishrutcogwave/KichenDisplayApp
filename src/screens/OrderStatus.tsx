@@ -86,7 +86,7 @@ function OrderStatus() {
 
             const msg =
               newItem.Res === "FFS"
-                ? `Order number ${newItem.KotNo} is ready for pickup`
+                ? `Order number ${newItem.Tbl} is ready for pickup`
                 : `Table ${newItem.Tbl} order is ready for pickup`;
 
             speak(msg);

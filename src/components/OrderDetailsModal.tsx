@@ -38,12 +38,13 @@ export default function OrderDetailsModal({
       await Promise.all(apiModels.map((item) => markItemPickUp(item)));
 
       // ✅ Get order number (assuming same KOT)
-      const kotNo = items[0]?.KotNo;
+      const kotNo = items[0]?.Tbl;
+     const typeofkot= items[0].Res
 
       // 🔊 VOICE ANNOUNCEMENT
       if (kotNo) {
         const utterance = new SpeechSynthesisUtterance(
-          `Order number ${kotNo} picked up`,
+        typeofkot==="FFS"?  `Order number ${kotNo} picked up`:`Table number ${kotNo} picked up`,
         );
         utterance.lang = "en-IN";
         utterance.rate = 0.9;

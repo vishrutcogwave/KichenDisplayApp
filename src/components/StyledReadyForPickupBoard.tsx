@@ -29,12 +29,12 @@ export default function ReadyForPickupBoard({ data }: Props) {
 
   filteredData.forEach((item) => {
     if (item.Res === "FFS") {
-      const key = `FFS-${item.KotNo}`;
+      const key = `FFS-${item.Tbl}`;
       if (!map.has(key)) {
         map.set(key, {
           type: "FFS",
-          value: item.KotNo,
-          label: `OrderNo ${item.KotNo}`,
+          value: item.Tbl,
+          label: `OrderNo ${item.Tbl}`,
           items: [item],
         });
       } else {
